@@ -15,6 +15,9 @@
 // 0-1 knapsack solution
 int Knapsack(std::vector<int> & value, std::vector<int> & size, int capacity);
 
+// two dimension knapsack
+int TwoDimenKnapsack(std::vector<int> & value, std::vector<int> & size1, std::vector<int>& size2, int capacity1, int capacity2);
+
 // there are limited amount of each item in knapsack
 int LimitedKnapsack(std::vector<int> & value, std::vector<int> & size, std::vector<int>& amount, int capacity);
 
