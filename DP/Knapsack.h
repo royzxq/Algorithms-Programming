@@ -24,4 +24,5 @@ int LimitedKnapsack(std::vector<int> & value, std::vector<int> & size, std::vect
 // there are unlimited amount of each item in knapsack
 int UnLimitedKnapsack(std::vector<int> & value, std::vector<int> & size, int capacity);
 
+
 #endif /* defined(__Algorithm_Programming__Knapsack__) */

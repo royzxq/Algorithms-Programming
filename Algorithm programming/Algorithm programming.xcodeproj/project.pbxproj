@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		767804B81B3A29E800CF674E /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 767804B71B3A29E800CF674E /* main.cpp */; };
+		767804C11B3A2A5B00CF674E /* Knapsack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 767804BF1B3A2A5B00CF674E /* Knapsack.cpp */; };
+		767804C51B3A2E6E00CF674E /* DP.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 767804C31B3A2E6E00CF674E /* DP.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +27,10 @@
 /* Begin PBXFileReference section */
 		767804B41B3A29E800CF674E /* Algorithm programming */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Algorithm programming"; sourceTree = BUILT_PRODUCTS_DIR; };
 		767804B71B3A29E800CF674E /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		767804BF1B3A2A5B00CF674E /* Knapsack.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Knapsack.cpp; path = ../../DP/Knapsack.cpp; sourceTree = "<group>"; };
+		767804C01B3A2A5B00CF674E /* Knapsack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Knapsack.h; path = ../../DP/Knapsack.h; sourceTree = "<group>"; };
+		767804C31B3A2E6E00CF674E /* DP.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DP.cpp; path = ../../DP/DP.cpp; sourceTree = "<group>"; };
+		767804C41B3A2E6E00CF674E /* DP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DP.h; path = ../../DP/DP.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +63,10 @@
 		767804B61B3A29E800CF674E /* Algorithm programming */ = {
 			isa = PBXGroup;
 			children = (
+				767804BF1B3A2A5B00CF674E /* Knapsack.cpp */,
+				767804C01B3A2A5B00CF674E /* Knapsack.h */,
+				767804C31B3A2E6E00CF674E /* DP.cpp */,
+				767804C41B3A2E6E00CF674E /* DP.h */,
 				767804B71B3A29E800CF674E /* main.cpp */,
 			);
 			path = "Algorithm programming";
@@ -119,6 +129,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				767804B81B3A29E800CF674E /* main.cpp in Sources */,
+				767804C51B3A2E6E00CF674E /* DP.cpp in Sources */,
+				767804C11B3A2A5B00CF674E /* Knapsack.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
