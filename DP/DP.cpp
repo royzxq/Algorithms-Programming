@@ -207,3 +207,81 @@ int MaximalSquare(std::vector<std::vector<bool>> & matrix){
 #endif
 }
 
+int BestTimetoBuyandSellStock_I(vector<int> & prices){
+    int len = prices.size();
+    if (len == 0 ) {
+        return 0;
+    }
+    // actually unnessary
+    vector<int> dp(len, 0);
+    int front_low = prices[0];
+    int max_profit = 0;
+    for (int i = 1; i < len; ++i) {
+        if (prices[i] < front_low) {
+            front_low = prices[i];
+        }
+        dp[i] = prices[i] - front_low;
+        max_profit = max(max_profit,dp[i]);
+    }
+    return max_profit;
+}
+
+int BestTimetoBuyandSellStock_II(std::vector<int> & prices){
+    size_t len = prices.size();
+    if (len <= 1) {
+        return 0;
+    }
+    
+    vector<int> left(len,0), right(len,0);
+    int front_low = prices[0];
+    int left_profit = 0;
+    for (int i = 1 ; i < len; ++i) {
+        if (prices[i] < front_low) {
+            front_low = prices[i];
+        }
+        left_profit = max(left_profit, prices[i]-front_low);
+        left[i] = left_profit;
+    }
+    
+    int back_max = prices[len-1];
+    int right_profit = 0, final_profit = 0;
+    
+    for (int i = len - 2; i >=0 ; --i) {
+        if (prices[i] > back_max) {
+            back_max = prices[i];
+        }
+        right_profit = max(right_profit, back_max - prices[i]);
+        right[i] = right_profit;
+        final_profit = max(final_profit, right[i] + (i > 0 ? left[i-1]: 0));
+    }
+    return final_profit;
+}
+
+int maxProfit_all(vector<int> &prices) {
+    int n = prices.size();
+    int sum = 0;
+    for(int i = 1;i < n;i++){
+        if(prices[i] > prices[i-1]){
+            sum += prices[i] - prices[i-1];
+        }
+    }
+    return sum;
+}
+
+int BestTimetoBuyandSellStock_III(std::vector<int> & prices, int k){
+    size_t len = prices.size();
+    if (k >= len/2) {
+        return maxProfit_all(prices);
+    }
+    vector<vector<int>> dp(k+1, vector<int> (len, 0));
+    for (int i = 1 ; i <= k ; ++i) {
+        int cur_max = 0 ;
+        for (int j = i+1; j < len; ++j) {
+            int instantProfit = prices[j] - prices[j-1];
+            cur_max = max(cur_max + instantProfit, dp[i-1][j]);
+            dp[i][j] = max(dp[i][j-1], cur_max);
+        }
+    }
+    return dp[k][len-1];
+}
+
