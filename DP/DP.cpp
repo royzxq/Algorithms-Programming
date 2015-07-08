@@ -8,7 +8,7 @@
 
 #include "DP.h"
 #include <algorithm>
-
+#include <string>
 using namespace std;
 
 int Robber_I(std::vector<int> & house){
@@ -285,3 +285,26 @@ int BestTimetoBuyandSellStock_III(std::vector<int> & prices, int k){
     return dp[k][len-1];
 }
 
+
+bool isMatch(string s, string p){
+    size_t len1 = s.length(), len2 = p.length();
+    vector<vector<bool>> dp(len1+1, vector<bool>(len2+1,false));
+    
+    dp[0][0] = true;
+    for (int i = 1; i < len2 && p[i] == '*'; i+=2)
+    {
+        // if re is like a*b*c*, this always match ""
+        dp[0][i+1] = true;
+    }
+    for (int i = 1; i <= len1 ; i++) {
+        for (int j = 1; j <= len2; j++) {
+            if (s[i-1] == p[j-1] || p[j-1] == '.') {
+                dp[i][j] = dp[i-1][j-1];
+            }
+            else if (p[j-1] == '*'){
+                dp[i][j] = dp[i][j-2] || (dp[i-1][j] && (s[i-1] == p[j-1] || p[j-1] == '.'));
+            }
+        }
+    }
+    return dp[len1][len2];
+}

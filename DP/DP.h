@@ -48,4 +48,7 @@ int BestTimetoBuyandSellStock_II(std::vector<int> & prices);
 //Design an algorithm to find the maximum profit. You may complete at most k transactions.
 int BestTimetoBuyandSellStock_III(std::vector<int> & prices, int k);
 
+
+//Implement regular expression matching with support for '.' and '*'.
+bool isMatch( std::string s,  std::string p);
 #endif /* defined(__Algorithm_programming__DP__) */
